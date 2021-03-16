@@ -1,40 +1,42 @@
 [IRC]
 
-Enable=true
-Server="irc.freenode.net:6697"
-Nick="${IRC_NICK}"
-UseTLS=true
-UseSASL=false
-SkipTLSVerify=true
-NickServPassword="${IRC_NICKSERV_PASSWORD}"
-RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+	[irc.freenode]
+	Server="irc.freenode.net:6697"
+	Nick="${IRC_NICK}"
+	UseTLS=true
+	UseSASL=false
+	SkipTLSVerify=true
+	NickServPassword="${IRC_NICKSERV_PASSWORD}"
+	RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
 [Matrix]
 
-Server="${MATRIX_SERVER}"
-Login="${MATRIX_LOGIN}"
-Password="${MATRIX_PASSWORD}"
-RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+	[Matrix.pcworms]
+	Server="${MATRIX_SERVER}"
+	Login="${MATRIX_LOGIN}"
+	Password="${MATRIX_PASSWORD}"
+	RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
 [Telegram]
-Token="${TELEGRAM_TOKEN}"
-RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
-MessageFormat="HTMLNick"
+	[Telegram.pcworms]
+	Token="${TELEGRAM_TOKEN}"
+	RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+	MessageFormat="HTMLNick"
 
 [[gateway]]
 name="gateway1"
 enable=true
 
 [[gateway.inout]]
-account="IRC"
+account="IRC.freenode"
 channel="#pcworms"
 
 [[gateway.inout]]
-account="Matrix"
+account="Matrix.pcworms"
 channel="#pcworms:mozilla.org"
 
 [[gateway.inout]]
-account="Telegram"
+account="Telegram.pcworms"
 channel="-1001319899000"
 
 [general]
