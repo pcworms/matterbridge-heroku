@@ -1,7 +1,7 @@
 [IRC]
 
 Enable=true
-Server="irc.freenode.net"
+Server="irc.freenode.net:6697"
 Nick="${IRC_NICK}"
 UseTLS=true
 UseSASL=false
